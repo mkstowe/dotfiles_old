@@ -127,7 +127,7 @@ alias uu='sudo pacman -Syu'
 alias ls='ls -Fsh1 --color=auto'
 alias lsa='ls -AFsh1 --color=auto'
 alias lsl='ls AFosh1 --color=auto'
-alias showip='hostname -I'
+alias showip='hostname -i'
 alias rm='careful_rm -c'
 
 alias venv='source env/bin/activate'
@@ -147,9 +147,7 @@ alias loadz='source ~/.zshrc'
 alias loadzsh='source ~/.zshrc'
 alias loadx='xrdb ~/.Xresources'
 
-alias nf='neofetch'
-alias fortune='clear && fortune -s | python /home/mkstowe/.local/bin/fortune-cat -p 1 -mtl 35'
-alias bun='~/bin/bunnyfetch'
+alias bun="~/bin/bunnyfetch.sh"
 
 alias vim='nvim'
 alias vi='nvim'
