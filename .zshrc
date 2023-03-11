@@ -149,7 +149,7 @@ alias loadx='xrdb ~/.Xresources'
 
 alias nf='neofetch'
 alias fortune='clear && fortune -s | python /home/mkstowe/.local/bin/fortune-cat -p 1 -mtl 35'
-alias bun='~/.local/bin/bunnyfetch'
+alias bun='~/bin/bunnyfetch'
 
 alias vim='nvim'
 alias vi='nvim'
