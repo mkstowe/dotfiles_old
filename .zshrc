@@ -115,6 +115,7 @@ alias ds='yadm status'
 alias dpull='yadm pull'
 alias dpush='yadm push'
 alias da='yadm add -u'
+alias dc='yadm commit -m'
 
 alias npmi='npm i'
 alias ni='npm i'
