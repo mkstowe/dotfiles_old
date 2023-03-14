@@ -1,7 +1,12 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# ZSH_THEME="robbyrussell"
 
 zstyle ':omz:update' mode auto      # update automatically without asking
 
@@ -10,20 +15,13 @@ ENABLE_CORRECTION="true"
 
 source $ZSH/oh-my-zsh.sh
 
-fpath+=$HOME/.zsh/pure
-
-autoload -U promptinit; promptinit
-
-zstyle :prompt:pure:git:branch color cyan
-zstyle :prompt:pure:git:action color cyan
-zstyle :prompt:pure:host color cyan
-zstyle :prompt:pure:prompt:continuation color cyan
-zstyle :prompt:pure:user color cyan
-prompt pure
+# autoload -U promptinit; promptinit
 
 source ~/.zplug/init.zsh
 
 zplug "MikeDacre/careful_rm"
+zplug "clvv/fasd"
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "Bhupesh-V/ugit"
 zplug "peterhurford/up.zsh"
 zplug "MichaelAquilina/zsh-auto-notify"
@@ -51,7 +49,6 @@ zplug "plugins/man", from:oh-my-zsh
 zplug "plugins/nvm", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/safe-paste", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/ubuntu", from:oh-my-zsh
 
@@ -68,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(zoxide init zsh)"
+eval "$(fasd --init auto)"
 
 export PATH=$PATH:$HOME/.local/bin
 export PROJECT_HOME=$HOME/projects
@@ -80,7 +77,10 @@ alias po='poweroff'
 alias sudo='sudo '
 
 alias gs='git status'
-alias ga='git add -A'
+alias ga='git add'
+alias gaa='git add --all'
+alias gA='git add --all'
+alias gd='git add .'
 alias gpush='git push'
 alias gpull='git pull'
 
@@ -128,10 +128,14 @@ alias ls='ls -Fsh1 --color=auto'
 alias lsa='ls -AFsh1 --color=auto'
 alias lsl='ls AFosh1 --color=auto'
 alias showip='hostname -i'
+
 alias rm='careful_rm -c'
+alias mv='mv -vi'
+alias cp='cp -vi'
 
 alias venv='source env/bin/activate'
 alias q='exit'
+alias :q='exit'
 alias c='clear'
 alias pd='pwd'
 
@@ -151,7 +155,7 @@ alias bun="~/bin/bunnyfetch.sh"
 
 alias vim='nvim'
 alias vi='nvim'
-alias v='nvim'
+alias v='f -e nvim'
 
 alias code='code-insiders'
 
@@ -162,3 +166,6 @@ savepac () {
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 source /usr/share/nvm/init-nvm.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
