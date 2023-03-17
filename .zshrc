@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,12 +45,14 @@ zplug "plugins/copyfile", from:oh-my-zsh
 zplug "plugins/cp", from:oh-my-zsh
 zplug "plugins/dirhistory", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
-zplug "plugins/man", from:oh-my-zsh
+zplug "plugins/frontend-search", from:oh-my-zsh
+zplug "plugins/ng", from:oh-my-zsh
 zplug "plugins/nvm", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/rg", from:oh-my-zsh
 zplug "plugins/safe-paste", from:oh-my-zsh
-zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/ubuntu", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
 
 if ! zplug check --verbose; then
 	printf "Install? [y/N]: "
@@ -75,6 +77,7 @@ alias suez='sudo nvim ~/.zshrc'
 
 alias po='poweroff'
 alias sudo='sudo '
+alias ag='acs -g'
 
 alias gs='git status'
 alias ga='git add'
@@ -126,7 +129,7 @@ alias npmd='npm i -D'
 alias uu='sudo pacman -Syu'
 alias ls='ls -Fsh1 --color=auto'
 alias lsa='ls -AFsh1 --color=auto'
-alias lsl='ls AFosh1 --color=auto'
+alias lsl='ls -AFosh1 --color=auto'
 alias showip='hostname -i'
 
 alias rm='careful_rm -c'
@@ -141,7 +144,6 @@ alias pd='pwd'
 
 alias h='history'
 alias hg='history | grep'
-alias ag='alias | grep'
 
 mdc() {
 	mkdir $1 && cd $1
@@ -169,3 +171,5 @@ source /usr/share/nvm/init-nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval $(thefuck --alias)

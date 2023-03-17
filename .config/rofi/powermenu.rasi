@@ -1,0 +1,59 @@
+@import "~/.cache/wal/colors-rofi.rasi"
+
+configuration {
+  show-icons:       true;
+}
+
+window {
+	width:						200px;
+  location:         northeast;
+  x-offset:         -30px;
+  y-offset:         45px;
+}
+
+inputbar {
+  enabled:          false;
+}
+
+listview {
+  background-color: @background;
+  lines:            5;
+  spacing:          5px;
+  cycle:            true;
+  dynamic:          true;
+}
+
+mainbox {
+  background-color: @background;
+	border:						2px;
+  border-radius:    12px;
+	border-color:			@color4;
+  //children:         [ inputbar, listview ];
+  padding:          2px 10px 10px 10px;
+}
+
+element {
+  background-color: transparent;
+  text-color:       @foreground;
+  padding:          8px 8px 8px -16px;
+}
+
+element-icon {
+  size:             14px;
+}
+
+element-text {
+  font:							"JetBrainsMono Nerd Font  14";
+  background-color: transparent;
+  text-color:       inherit;
+  expand:           true;
+  horizontal-align: 0;
+  vertical-align:   0.5;
+  margin:           0px  2.5px 0px 10px;
+}
+
+element selected {
+  background-color: transparent;
+  text-color:       @color4;
+  border-color:     @color4;
+}
