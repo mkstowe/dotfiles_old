@@ -26,12 +26,15 @@ resolution="$(xwininfo -root | grep geometry | awk '{print $2}' | cut -d + -f1)"
 shell=$(basename $SHELL)
 term=$(pstree -sA $$ | awk -F "---" '{ print $2 }')
 
+i='[7m';
 c0='[0m';
 c1='[31m'; c2='[32m'
 c3='[33m'; c4='[34m'
 c5='[35m'; c6='[36m'
 c7='[37m'; c8='[38m'
-palette="[7m$c1 $c1 $c1 $c2 $c2 $c2 $c3 $c3 $c3 $c4 $c4 $c4 $c5 $c5 $c5 $c6 $c6 $c6 [m"
+
+esc=''
+palette="$i$c1  $c0 $i$c2  $c0 $i$c3  $c0 $i$c4  $c0 $i$c5  $c0 $i$c6  $c0" 
 
 # (\ /)
 # ( · ·)
@@ -51,5 +54,5 @@ cat << EOF
    c($f5"$t)($f5"$t)    $shell
    $f2~~~~~~~~~  $t$term
 
-    $palette
+      $palette
 EOF

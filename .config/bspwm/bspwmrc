@@ -54,4 +54,4 @@ dunst -lf  "${color0}"\
       -cb  "${color1}" \
       -cfr "${color0}" > /dev/null 2>&1 &
 
-feh --bg-fill ~/Pictures/wallpapers/coffee_cat_landscape_main.png --bg-fill ~/Pictures/wallpapers/coffee_portrait.png
+feh --bg-fill ~/Pictures/wallpapers/coffee_cat_landscape_edited.png --bg-fill ~/Pictures/wallpapers/coffee_portrait.png
