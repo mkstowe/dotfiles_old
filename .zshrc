@@ -140,6 +140,7 @@ yadmPush() {
 }
 
 yadmSend() {
+  yadm submodule update --remote --merge
   yadm add -u
   if [ $# -eq 1 ]; then
     yadm commit -a -m "$1"
