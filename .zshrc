@@ -84,8 +84,9 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gA='git add --all'
 alias gd='git add .'
-alias gpush='git push'
-alias gpull='git pull'
+alias gpush='push'
+alias gpull='pull'
+alias gc='send'
 
 pull() {
   if [ $# -eq 2 ]; then
@@ -115,10 +116,39 @@ send() {
 }
 
 alias ds='yadm status'
-alias dpull='yadm pull'
-alias dpush='yadm push'
-alias da='yadm add -u'
-alias dc='yadm commit -m'
+alias dpull='yadmPull'
+alias dpush='yadmPush'
+alias da='yadm add'
+alias dA='yadm add -u'
+alias daa='yadm add -u'
+alias dc='yadmSend'
+
+yadmPull() {
+  if [ $# -eq 2 ]; then
+    yadm pull --rebase -q $2 "$(yadm rev-parse --abbrev-ref HEAD)"
+  else
+    yadm pull --rebase -q origin "$(yadm rev-parse --abbrev-ref HEAD)"
+  fi
+}
+
+yadmPush() {
+  if [ $# -eq 2 ]; then
+    yadm push -q $2 "$(yadm rev-parse --abbrev-ref HEAD)"
+  else
+    yadm push -q origin "$(yadm rev-parse --abbrev-ref HEAD)"
+  fi
+}
+
+yadmSend() {
+  yadm add -u
+  if [ $# -eq 1 ]; then
+    yadm commit -a -m "$1"
+  else
+    yadm commit -a -m "I'm too lazy to write a commit message."
+  fi
+  yadmPull
+  yadmPush
+}
 
 alias npmi='npm i'
 alias ni='npm i'

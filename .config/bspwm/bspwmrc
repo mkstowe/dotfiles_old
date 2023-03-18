@@ -27,7 +27,7 @@ bspc config gapless_monocle	true
 
 bspc config focus_follows_pointer	true
 
-wal -f ~/.config/wal/colorschemes/dark/catppuccin_frappe.json
+wal -f ~/.config/wal/colorschemes/dark/catppuccin_mocha.json
 
 # Handle colors
 . "${HOME}/.cache/wal/colors.sh"
