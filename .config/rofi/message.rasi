@@ -1,24 +1,24 @@
 /* Confirm Dialog */
 
-@import "colors.rasi"
+@import "~/.cache/wal/colors-rofi.rasi"
 
 * {
-    background-color:       @bg;
-    text-color:             @fga;
+    background-color:       @background;
+    text-color:             @foreground;
 	font:				 	"Terminus 9";
 }
 
 window {
     width:      			320px;
     padding:    			25px;
-    border:					0px 0px 2px 0px;
-    border-radius:          0px;
-    border-color:           @ac;
+    border:					2px;
+    border-radius:          12px;
+    border-color:           @color4;
     location:               center;
     y-offset:               -2em;
 }
 
 entry {
     expand: 				true;
-    text-color:				@ac;
+    text-color:				@color4;
 }
