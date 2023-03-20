@@ -19,6 +19,9 @@ bspc config border_width	0
 bspc config window_gap		32
 bspc config top_padding		24
 
+killall borders.sh
+~/.config/bspwm/scripts/borders.sh
+
 bspc config automatic_scheme alternate
 
 bspc config split_ratio		0.5
