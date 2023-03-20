@@ -4,9 +4,9 @@
 #
 # Yes, this is stolen from gk.
 
-outer='0x1e1e2e'   # outer
-inner1='0xcdd6f4'  # focused
-inner2='0x45475a'  # normal
+outer=$(xrdb -get background | cut -c2-)   # outer
+inner1=$(xrdb -get color15 | cut -c2-)  # focused
+inner2=$(xrdb -get color8 | cut -c2-)  # normal
 
 trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 

@@ -19,8 +19,6 @@ bspc config border_width	0
 bspc config window_gap		32
 bspc config top_padding		24
 
-killall borders.sh
-~/.config/bspwm/scripts/borders.sh
 
 bspc config automatic_scheme alternate
 
@@ -60,4 +58,8 @@ dunst -lf  "${color0}"\
       -cb  "${color1}" \
       -cfr "${color0}" > /dev/null 2>&1 &
 
-feh --bg-fill ~/Pictures/wallpapers/coffee_cat_landscape.png --bg-fill ~/Pictures/wallpapers/coffee_portrait.png
+# feh --bg-fill ~/Pictures/wallpapers/coffee_cat_landscape.png --bg-fill ~/Pictures/wallpapers/coffee_portrait.png
+feh --bg-tile ~/Pictures/wallpapers/tile_x.png
+
+killall borders.sh
+~/.config/bspwm/scripts/borders.sh
