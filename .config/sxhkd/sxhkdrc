@@ -77,9 +77,13 @@ super + shift + slash
 super + ctrl + q
 	bspc node -c
 
+# Cancel all preselections
+super + shift + alt + q
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
 # Send window to given direction
-super + {_,shift + }{Left,Down,Up,Right}
-	bspc node -{f,s} {west,south,north,east}
+super + {_,shift +,shift + alt + }{Left,Down,Up,Right}
+	bspc node -{f,s,p} {west,south,north,east}
 
 # Focus or send to given desktop
 super + {_,shift + }{a,s,d,q,w,e,r,t,y,u,i,o,p}
