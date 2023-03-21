@@ -35,15 +35,6 @@ XF86AudioMute
 # Power
 super + BackSpace
 	~/.config/rofi/scripts/powermenu.sh
-# super + shift + BackSpace
-	# systemctl poweroff
-
-# super + ctrl + BackSpace
-	# systemctl reboot
-
-# super + BackSpace 
-	# kill -9 -1
-
 
 
 # Reload sxhkd
@@ -53,12 +44,8 @@ super + shift + Tab
 
 
 # Screenshot region
-super + ctrl + shift + p
-	import ~/Pictures/screenshots/${data + '%Y-%m-%d-%H-%M-%S'}.png
-
-# Screenshot whole display
-	import -window root ~/Pictures/screenshots/${data + '%Y-%m-%d-%H-%M-%S'}.png
-
+super + shift + alt + p
+	~/.config/rofi/scripts/screenshot.sh
 
 
 #################

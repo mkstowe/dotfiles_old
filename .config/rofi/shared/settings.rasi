@@ -18,8 +18,8 @@
   
   /* option menus */
   option-element-padding:       100px 100px 100px 90px;
-  option-3-window-padding:      407px 442px;
-  option-3-listview-spacing:    126px;
+  option-3-window-padding:      640px 1488px;
+  option-3-listview-spacing:    65px;
   option-5-window-padding:      640px 1182px;
   option-5-listview-spacing:    65px;
   option-6-listview-spacing:    35px;
