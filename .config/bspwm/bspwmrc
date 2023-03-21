@@ -47,16 +47,8 @@ picom &
 pkill polybar
 ~/.config/polybar/launch.sh
 
-pkill dunst
-dunst -lf  "${color0}"\
-      -lb  "${color7}" \
-      -lfr "${color0}" \
-      -nf  "${color0}" \
-      -nb  "${color7}" \
-      -nfr "${color0}" \
-      -cf  "${color0}" \
-      -cb  "${color1}" \
-      -cfr "${color0}" > /dev/null 2>&1 &
+killall dunst
+dunst -conf ~/.cache/wal/dunstrc > /dev/null 2>&1 &
 
 # feh --bg-fill ~/Pictures/wallpapers/coffee_cat_landscape.png --bg-fill ~/Pictures/wallpapers/coffee_portrait.png
 feh --bg-tile ~/Pictures/wallpapers/tile_x.png
