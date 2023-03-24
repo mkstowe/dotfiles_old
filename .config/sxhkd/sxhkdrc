@@ -24,6 +24,11 @@ super + ctrl + g
 	gimp
 
 
+# Run script in ~/bin
+super + ctrl + slash
+	~/.config/rofi/scripts/run-script.sh
+
+
 # Audio
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
@@ -43,7 +48,7 @@ super + shift + Tab
 
 
 
-# Screenshot region
+# Screenshot
 super + shift + alt + p
 	~/.config/rofi/scripts/screenshot.sh
 

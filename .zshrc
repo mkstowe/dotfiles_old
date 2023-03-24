@@ -71,6 +71,7 @@ eval "$(fasd --init auto)"
 
 export PATH=$PATH:$HOME/.local/bin
 export PROJECT_HOME=$HOME/projects
+export EDITOR=lvim
 
 alias ez='nvim ~/.zshrc'
 alias suez='sudo nvim ~/.zshrc'
@@ -186,9 +187,9 @@ alias loadx='xrdb ~/.Xresources'
 
 alias bun="~/bin/bunnyfetch.sh"
 
-alias vim='nvim'
-alias vi='nvim'
-alias v='f -e nvim'
+alias vim='lvim'
+alias vi='lvim'
+alias v='f -e lvim'
 
 alias code='code-insiders'
 
